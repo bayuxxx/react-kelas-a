@@ -1,6 +1,6 @@
 import Abi from './components/kelasa';
 import Mantan from './components/properti';
-
+import Fakultasubg from './components/Listing';
 
 function App() {
 
@@ -11,6 +11,7 @@ function App() {
       <Mantan nama = "Lutfi" kelas = "A" hobi = "Mabuk"/>
       <Mantan nama = "Apria" kelas = "A" hobi = "Mencintai Suci"/>
       <Mantan nama = "Pandu" kelas = "A" hobi = "Loving"/>
+      <Fakultasubg />
     </>
   );
 }
