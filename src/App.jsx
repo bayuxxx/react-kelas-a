@@ -6,6 +6,7 @@ import Kondisi from './components/Perkondisian';
 import Pesan from './components/button/pesan_button';
 import TambahKurang from './components/button/state_hook';
 import Multiplestate from './components/button/multiple_state_hook';
+import TestForm from './components/button/isian';
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
       <Pesan />
       <TambahKurang />
       <Multiplestate />
+      <TestForm />
     </>
   );
 }
