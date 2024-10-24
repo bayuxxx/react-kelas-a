@@ -3,7 +3,6 @@ export default function ListSortingq({ nama, logo, harga }) {
     <>
       {harga > 10000 ? (
         <>
-          {" "}
           {nama} {harga} {logo}
         </>
       ) : (

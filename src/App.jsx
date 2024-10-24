@@ -3,6 +3,9 @@ import Mantan from './components/properti';
 import Fakultasubg from './components/Listing';
 import Sembako from './components/arrayject';
 import Kondisi from './components/Perkondisian';
+import Pesan from './components/button/pesan_button';
+import TambahKurang from './components/button/state_hook';
+import Multiplestate from './components/button/multiple_state_hook';
 function App() {
 
   return (
@@ -15,6 +18,9 @@ function App() {
       <Fakultasubg />
       <Sembako />
       <Kondisi />
+      <Pesan />
+      <TambahKurang />
+      <Multiplestate />
     </>
   );
 }
