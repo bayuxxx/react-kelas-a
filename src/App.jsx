@@ -7,6 +7,8 @@ import Pesan from './components/button/pesan_button';
 import TambahKurang from './components/button/state_hook';
 import Multiplestate from './components/button/multiple_state_hook';
 import TestForm from './components/button/isian';
+import Ngelistgan from './components/mini/aplikasi_mini'
+
 function App() {
 
   return (
@@ -16,13 +18,14 @@ function App() {
       <Mantan nama = "Lutfi" kelas = "A" hobi = "Mabuk"/>
       <Mantan nama = "Apria" kelas = "A" hobi = "Mencintai Suci"/>
       <Mantan nama = "Pandu" kelas = "A" hobi = "Loving"/> */}
-      <Fakultasubg />
+      {/* <Fakultasubg />
       <Sembako />
       <Kondisi />
       <Pesan />
       <TambahKurang />
       <Multiplestate />
-      <TestForm />
+      <TestForm /> */}
+      <Ngelistgan />
     </>
   );
 }
