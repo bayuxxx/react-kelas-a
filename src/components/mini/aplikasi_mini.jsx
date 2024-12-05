@@ -4,10 +4,18 @@ import "./Ngelistgan.css";
 export default function Ngelistgan() {
   const [Aksi, Aturaksi] = useState([]);
   const [Tugas, AturTugas] = useState("");
+  const [editId, setEditId] = useState(null); // State untuk menyimpan ID yang sedang diedit
 
   const TambahKerjaan = () => {
     if (Tugas.trim()) {
-      Aturaksi([...Aksi, { text: Tugas, id: Date.now() }]);
+      if (editId) {
+        // Jika ada ID yang sedang diedit, update tugas yang ada
+        Aturaksi(Aksi.map((item) => (item.id === editId ? { ...item, text: Tugas } : item)));
+        setEditId(null); // Reset editId setelah edit
+      } else {
+        // Tambah tugas baru
+        Aturaksi([...Aksi, { text: Tugas, id: Date.now() }]);
+      }
       AturTugas("");
     }
   };
@@ -19,6 +27,11 @@ export default function Ngelistgan() {
     }
   };
 
+  const EditKerjaan = (id, text) => {
+    setEditId(id); // Set ID tugas yang akan diedit
+    AturTugas(text); // Set nilai input dengan text tugas yang akan diedit
+  };
+
   return (
     <div className="container">
       <h1>Daily Life of Kirito</h1>
@@ -27,11 +40,12 @@ export default function Ngelistgan() {
         value={Tugas}
         onChange={(t) => AturTugas(t.target.value)}
       />
-      <button onClick={TambahKerjaan}>Masukkan</button>
+      <button onClick={TambahKerjaan}>{editId ? "Update" : "Masukkan"}</button>
       <ol>
         {Aksi.map((gasskn) => (
           <li key={gasskn.id}>
             {gasskn.text}
+            <button onClick={() => EditKerjaan(gasskn.id, gasskn.text)}>Edit</button>
             <button onClick={() => Hapuskerjaan(gasskn.id)}>Hapus</button>
           </li>
         ))}
